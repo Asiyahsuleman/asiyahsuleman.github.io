@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asiyah Suleman | Executive Assistant & Operations Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A1A0F;
+    --accent: #22C55E;
+    --accent-mint: #86EFAC;
+    --btn-bg: #14532D;
+    --white: #FFFFFF;
+    --text-body: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.88);
+    --card-bg: rgba(20, 83, 45, 0.22);
+    --card-border: rgba(34, 197, 94, 0.18);
+    --card-hover: rgba(34, 197, 94, 0.45);
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-body);
+    font-family: var(--font);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header without harsh lines */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(10, 26, 15, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  nav.wrap {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(34, 197, 94, 0.12);
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 4px var(--accent);
+  }
+
+  .navlinks {
+    display: flex;
+    gap: 24px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .navlinks a {
+    transition: color 0.15s ease;
+  }
+
+  .navlinks a:hover {
+    color: var(--accent);
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    background: var(--btn-bg);
+    color: var(--white) !important;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .cta-link:hover {
+    background: var(--accent);
+    color: var(--bg) !important;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.2);
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 90px 0 60px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.85rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--white);
+    margin-bottom: 18px;
+    max-width: 22ch;
+  }
+
+  .hero-highlight {
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    color: var(--accent-mint);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.45;
+  }
+
+  .hero-desc {
+    color: var(--white);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 62ch;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 13px 28px;
+    background: var(--btn-bg);
+    color: var(--white);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.15);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    padding: 13px 24px;
+    background: transparent;
+    color: var(--accent-mint);
+    border: 1px solid rgba(134, 239, 172, 0.35);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: var(--accent-mint);
+    color: var(--white);
+  }
+
+  /* Spacing between sections (No straight lines) */
+  section {
+    padding: 65px 0;
+  }
+
+  /* Green Section Headers */
+  .section-label {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  section h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--white);
+    margin: 0 0 24px;
+  }
+
+  .section-intro {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin: -10px 0 32px;
+    max-width: 60ch;
+  }
+
+  /* About Prose in Pure White */
+  .prose p {
+    margin: 0 0 20px;
+    color: var(--white);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    max-width: 65ch;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-callout {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 28px 0;
+    border-left: 3px solid var(--accent);
+  }
+
+  .about-callout p {
+    color: var(--white);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Services Grid (Clean cards, no straight divider lines) */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 26px 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    background: rgba(20, 83, 45, 0.35);
+  }
+
+  /* Green for Service Headers */
+  .service-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* White for Service write up */
+  .service-card p {
+    margin: 0;
+    color: var(--white);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  /* Projects Section (Clean elevated cards, no divider lines) */
+  .projects-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: rgba(34, 197, 94, 0.12);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  /* Green for Project Header */
+  .project-card h3 {
+    margin: 0 0 14px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* White for Project write up */
+  .project-card p {
+    margin: 0 0 10px;
+    color: var(--white);
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .project-card p strong {
+    color: var(--accent-mint);
+    font-weight: 700;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent);
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .project-link:hover {
+    color: var(--accent-mint);
+    transform: translateX(3px);
+  }
+
+  /* Tools Grid */
+  .tool-group {
+    margin-bottom: 34px;
+  }
+
+  .tool-group-title {
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 16px;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+
+  .tool-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-2px);
+    background: rgba(20, 83, 45, 0.4);
+  }
+
+  .tool-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 83, 45, 0.7);
+  }
+
+  .tool-card span.name {
+    font-weight: 700;
+    font-size: 0.94rem;
+    color: var(--white);
+  }
+
+  .tool-card span.sub {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* Contact Section */
+  .contact-box {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 36px;
+  }
+
+  .contact-intro {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .contact-email-row {
+    font-size: 1.05rem;
+    margin-bottom: 26px;
+    color: var(--white);
+  }
+
+  .contact-email-row a {
+    color: var(--accent);
+    font-weight: 700;
+    transition: color 0.15s ease;
+  }
+
+  .contact-email-row a:hover {
+    color: var(--accent-mint);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+  }
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: var(--white);
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 0.98rem;
+    background: rgba(10, 26, 15, 0.9);
+    color: var(--white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button.submit {
+    align-self: flex-start;
+    padding: 13px 30px;
+    background: var(--btn-bg);
+    color: var(--white);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  button.submit:hover {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translateY(-1px);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.15);
+  }
+
+  /* Footer */
+  footer.wrap {
+    padding: 40px 24px 60px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.88rem;
+    text-align: center;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      padding: 60px 0 40px;
+    }
+    .navlinks {
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+    .contact-box {
+      padding: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand-group">
+      <div class="brand">Asiyah Suleman</div>
+    </div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact" class="cta-link">Hire Me</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Executive Operations Partner</span>
+    <h1>Give me the chaos. I will hand you back a system that <span class="hero-highlight">runs itself</span>.</h1>
+    <div class="hero-subtitle">Executive Assistant and Operations Specialist, for founders and growing teams.</div>
+    <p class="hero-desc">I step into fast-moving executive environments to protect your time, eliminate operational drag, and build high-reliability workflows that give you your days back.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Work with me &rarr;</a>
+      <a href="#projects" class="btn-secondary">View past systems</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="prose">
+      <p>I am Asiyah, an Executive Assistant and Operations Specialist. I specialize in taking the day to day chaos of running a business: calendars, priorities, operations, follow-ups, and turning it into organized systems where nothing gets missed.</p>
+      
+      <p>I do not wait to be told what to do next. I look at what is happening across your business, decide what matters most, and move it forward decisively.</p>
+
+      <div class="about-callout">
+        <p>I bring calm under pressure, direct clarity when decisions need to be made, and relentless follow-through. Hand me something ambiguous, and I will bring back a working solution, not more questions.</p>
+      </div>
+
+      <p>That is who I am at work: organized, confidential, and completely committed to true operational ownership.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="section-intro">High-leverage support designed to liberate founder focus and keep teams executing smoothly.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Executive support</h3>
+        <p>I manage calendars, inboxes, and daily schedules so nothing important slips through, ensuring you are never the bottleneck chasing your own day.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Travel and meeting coordination</h3>
+        <p>I handle the back and forth of booking, complex itineraries, and executive briefing prep so every trip and high-stakes meeting runs without friction.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Project and task coordination</h3>
+        <p>I keep projects moving, track critical milestones, and follow up with the right stakeholders so priorities actually get completed on time.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Systems and process setup</h3>
+        <p>I build intuitive trackers and automated workflows in ClickUp, Notion, or Monday.com that give you instant visibility into operational progress.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>CRM and client communication</h3>
+        <p>I keep your CRM pipeline clean and up to date, managing high-touch client communication so every relationship receives prompt attention.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Documentation and SOPs</h3>
+        <p>I author clear, step-by-step standard operating procedures so your team knows exactly how to execute without constant founder explanations.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Reporting and data organization</h3>
+        <p>I turn scattered numbers and weekly updates into concise executive digests and dashboard sheets that deliver immediate clarity.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Invoicing and bookkeeping support</h3>
+        <p>I set up and send invoices, track payments, and keep your books organized in QuickBooks, so nothing falls behind.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Vendor and freelancer coordination</h3>
+        <p>I follow up with outside contractors and vendors on deadlines, deliverables, and payments, so their work stays on track without you having to chase anyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="section-intro">Selected operational systems built for executive leadership. Names and proprietary data have been generalized to protect client confidentiality.</p>
+
+    <div class="projects-stack">
+      <div class="project-card">
+        <span class="project-tag">Vendor &amp; Procurement Management (Google Sheets + Forms)</span>
+        <h3>Northstar Creative &amp; Digital: vendor and procurement tracking system</h3>
+        <p><strong>Problem:</strong> As the company grew, purchase requests, vendor information, quotes, purchase orders, invoices, and payments were being managed across different places.</p>
+        <p><strong>What I built:</strong> A centralized Google-based procurement system tracking purchases from request through approval, vendor selection, purchase orders, delivery, invoicing, and payment, with automated form submissions and a documented process.</p>
+        <a class="project-link" href="#contact">View the live procurement system &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <span class="project-tag">Travel &amp; Itinerary Planning</span>
+        <h3>Business travel itinerary: Vancouver to Tokyo</h3>
+        <p><strong>Problem:</strong> An executive needed a fully planned international business trip, covering flights, accommodation, meetings, and logistics, without managing the details himself.</p>
+        <p><strong>What I built:</strong> A complete itinerary covering flight and hotel details, a meeting schedule, meal and leisure options matched to his preferences, a full cost breakdown, and a pre-departure checklist.</p>
+        <a class="project-link" href="https://drive.google.com/file/d/1sNkxaPd3-B2hkOcFV4Gq8Zm9GqmgsEmm/view?usp=sharing" target="_blank" rel="noopener">View the itinerary &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <span class="project-tag">Process Architecture</span>
+        <h3>Employee lifecycle and offboarding SOP</h3>
+        <p><strong>Problem:</strong> The company documented hiring thoroughly, but completely lacked an offboarding protocol, creating quiet security risks and lost knowledge.</p>
+        <p><strong>What I built:</strong> An end-to-end operational playbook covering day one through departure, establishing clear account access handoffs and equipment retrieval checklists.</p>
+        <a class="project-link" href="#contact">View the live SOP &rarr;</a>
+      </div>
+
+
+      <div class="project-card">
+        <span class="project-tag">Service Operations &amp; SLA Tracking (Google Sheets)</span>
+        <h3>Crestline Commercial Services: service operations and SLA tracking system</h3>
+        <p><strong>Problem:</strong> Crestline needed a better way to track service requests, SLA deadlines, and technician assignments.</p>
+        <p><strong>What I built:</strong> A Google Sheets tracker with an executive dashboard, plus a documented SOP.</p>
+        <a class="project-link" href="#contact">View the CCS service operations system &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <span class="project-tag">System Build</span>
+        <h3>Client onboarding and tracking system</h3>
+        <p><strong>Problem:</strong> Client onboarding was scattered across loose email threads with zero central visibility into where accounts stood in the kickoff cycle.</p>
+        <p><strong>What I built:</strong> A linked Notion workspace tracking every new client from signed proposal to first deliverable, featuring live status stages and automated milestone handoffs.</p>
+        <a class="project-link" href="#contact">View the live Notion space &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2>Tools</h2>
+    <p class="section-intro">Battle-tested tools configured to eliminate confusion, automate manual tasks, and keep teams running smoothly.</p>
+
+    <div class="tool-group">
+      <div class="tool-group-title">Project &amp; Task Management</div>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#7B68EE22;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 8l8 6 8-6-8-6z" fill="#9B8CFF"/><path d="M4 16l8 6 8-6" stroke="#9B8CFF" stroke-width="2" fill="none"/></svg></div>
+          <span class="name">ClickUp</span><span class="sub">Advanced workspace setup</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#FF3D5722;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#FF6B7A" stroke-width="1.6"/><circle cx="8" cy="8.5" r="1.6" fill="#FF6B7A"/><circle cx="8" cy="12" r="1.6" fill="#FF6B7A"/><circle cx="8" cy="15.5" r="1.6" fill="#FF6B7A"/></svg></div>
+          <span class="name">Monday.com</span><span class="sub">Workflow boards</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#0079BF22;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#5AA9E6" stroke-width="1.6"/><rect x="6" y="6" width="5" height="9" rx="1" fill="#5AA9E6"/><rect x="13" y="6" width="5" height="5" rx="1" fill="#5AA9E6"/></svg></div>
+          <span class="name">Trello</span><span class="sub">Task boards</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#F0656522;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3" stroke="#F58A8A" stroke-width="1.6"/><circle cx="6" cy="16" r="3" stroke="#F58A8A" stroke-width="1.6"/><circle cx="18" cy="16" r="3" stroke="#F58A8A" stroke-width="1.6"/></svg></div>
+          <span class="name">Asana</span><span class="sub">Team task tracking</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#FCB40022;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#F5B942" stroke-width="1.6"/><line x1="3" y1="9" x2="21" y2="9" stroke="#F5B942" stroke-width="1.6"/><line x1="9" y1="9" x2="9" y2="20" stroke="#F5B942" stroke-width="1.6"/></svg></div>
+          <span class="name">Airtable</span><span class="sub">Databases &amp; trackers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-group">
+      <div class="tool-group-title">Docs &amp; Collaboration</div>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#ffffff18;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#E5E5E0" stroke-width="1.6"/><line x1="8" y1="8" x2="16" y2="8" stroke="#E5E5E0" stroke-width="1.6"/><line x1="8" y1="12" x2="16" y2="12" stroke="#E5E5E0" stroke-width="1.6"/><line x1="8" y1="16" x2="13" y2="16" stroke="#E5E5E0" stroke-width="1.6"/></svg></div>
+          <span class="name">Notion</span><span class="sub">Systems &amp; SOP hubs</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#4285F422;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="#4285F4"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="#34A853"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="#FBBC05"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="#EA4335"/></svg></div>
+          <span class="name">Google Workspace</span><span class="sub">Docs, Drive, Calendar</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#E9573922;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#F0855F" stroke-width="1.6"/><line x1="7" y1="8" x2="17" y2="8" stroke="#F0855F" stroke-width="1.6"/><line x1="7" y1="12" x2="17" y2="12" stroke="#F0855F" stroke-width="1.6"/><line x1="7" y1="16" x2="13" y2="16" stroke="#F0855F" stroke-width="1.6"/></svg></div>
+          <span class="name">Microsoft Office</span><span class="sub">Word, Excel, Outlook</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#0F9D5822;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#4CBB8A" stroke-width="1.6"/><line x1="4" y1="9" x2="20" y2="9" stroke="#4CBB8A" stroke-width="1.6"/><line x1="10" y1="9" x2="10" y2="21" stroke="#4CBB8A" stroke-width="1.6"/></svg></div>
+          <span class="name">Google Sheets</span><span class="sub">Reporting models</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-group" style="margin-bottom:0;">
+      <div class="tool-group-title">CRM, Finance &amp; Communication</div>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#FF7A5922;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="#FF9E82" stroke-width="1.6"/><path d="M17 7l3-3M4 20l3-3" stroke="#FF9E82" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <span class="name">HubSpot</span><span class="sub">CRM &amp; pipeline triage</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#2CA01C22;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5FCB4C" stroke-width="1.8"/><path d="M9 12h6M12 9v6" stroke="#5FCB4C" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <span class="name">QuickBooks Online</span><span class="sub">Invoicing &amp; reconciliation</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#4A154B33;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="6" height="6" rx="2" fill="#D9A0DA"/><rect x="14" y="4" width="6" height="6" rx="2" fill="#7BD1E8"/><rect x="4" y="14" width="6" height="6" rx="2" fill="#7DE0B0"/><rect x="14" y="14" width="6" height="6" rx="2" fill="#F5CE6E"/></svg></div>
+          <span class="name">Slack</span><span class="sub">Async communication</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#2D8CFF22;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="13" height="12" rx="2" stroke="#6DAFFF" stroke-width="1.6"/><path d="M16 10l5-3v10l-5-3" stroke="#6DAFFF" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <span class="name">Zoom</span><span class="sub">Meeting logistics</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#006BFF22;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#6DAFFF" stroke-width="1.6"/><line x1="4" y1="9" x2="20" y2="9" stroke="#6DAFFF" stroke-width="1.6"/><circle cx="9" cy="14" r="1.4" fill="#6DAFFF"/></svg></div>
+          <span class="name">Calendly</span><span class="sub">Intake scheduling</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon" style="background:#FF4A0022;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5" stroke="#FF8A5C" stroke-width="1.6" stroke-linecap="round"/><path d="M20 12a8 8 0 0 1-14 5" stroke="#FF8A5C" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <span class="name">Zapier</span><span class="sub">Workflow automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+        <h2>Start a Conversation</h2>
+      <p class="contact-intro">Whether you need dedicated day-to-day executive backing or want to overhaul your operational workflows, let us discuss how I can support you.</p>
+      <div class="contact-email-row">
+        Direct Email: <a href="mailto:asiyahvaservices@gmail.com">asiyahvaservices@gmail.com</a>
+      </div>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about what you are building and where you need operations support..." required></textarea>
+        </div>
+        <button type="submit" class="submit">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  Asiyah Suleman | Executive Assistant &amp; Operations Specialist
+</footer>
+
+</body>
+</html>
